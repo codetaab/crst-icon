@@ -1,71 +1,100 @@
 # crst-icon
 
-This template should help get you started developing with Vue 3 in Vite.
+A lightweight and flexible icon library for Vue 3 applications.
 
 ## Introduction
 
-`crst-icon` is a Vue 3 library designed to simplify the integration and management of icons in your Vite projects. It provides a set of tools and components to efficiently handle icon files and their usage within your application.
+`crst-icon` is a Vue 3 library that provides an efficient way to manage and use icons in your applications. It includes a set of default icons and allows you to easily add your own custom icons.
+
+## Features
+
+- 🚀 Vue 3 Support
+- 📦 Built-in Default Icons
+- 🎨 Custom Icon Support
+- 🔧 Easy Configuration
+- 💪 TypeScript Support
+- 🎯 Tree-shakeable
 
 ## Installation
 
-To install the `crst-icon` library, use npm or yarn:
-
-```sh
+```bash
 npm install crst-icon
 ```
 
 or
 
-```sh
+```bash
 yarn add crst-icon
 ```
 
-## Usage
+## Basic Usage
 
-Here's a basic example of how to use the `crst-icon` library in your Vue 3 project:
+1. Import and register the component in your main file:
 
 ```javascript
 import { createApp } from 'vue'
 import App from './App.vue'
-import { useIcon } from 'crst-icon'
+import { CrstIcon } from 'crst-icon'
 
 const app = createApp(App)
-app.use(useIcon)
+app.component('CrstIcon', CrstIcon)
 app.mount('#app')
 ```
 
-## Configuration
+2. Use the icon component in your templates:
 
-The library allows you to customize the icons folder and handle icon files through configuration options. Refer to the `vite-plugin-crst-icons.ts` for more details on available configurations.
-
-## Components
-
-- **use-icon**: A composable function to easily integrate icons into your components.
-- **iconsRegistry**: A registry to manage and access icons throughout your application.
-- **Helper Functions**: Utility functions like `findIconsFolder` and `handelIconsFile` to assist in icon management.
-
-## Development
-
-To set up a development environment, follow these steps:
-
-```sh
-npm install
-npm run dev
+```vue
+<template>
+  <div>
+    <CrstIcon name="home" />
+  </div>
+</template>
 ```
 
-This will compile and hot-reload the project for development.
+## Using Default Icons
+
+The library comes with a set of default icons that you can use right away:
+
+```vue
+<template>
+  <CrstIcon name="home" />
+</template>
+```
+
+## Adding Custom Icons
+
+You can register your own custom icons:
+
+```javascript
+import { registerIcons } from 'crst-icon'
+
+// Get all icon files in your icons directory
+const customIcons = import.meta.glob('./icons/*.vue')
+
+// Register your custom icons
+registerIcons(customIcons, 'custom')
+```
+
+## Icon Properties
+
+| Prop   | Type   | Default        | Description       |
+| ------ | ------ | -------------- | ----------------- |
+| name   | String | required       | Name of the icon  |
+| size   | String | '1em'          | Size of the icon  |
+| color  | String | 'currentColor' | Color of the icon |
+| rotate | Number | 0              | Rotation degree   |
 
 ## TypeScript Support
 
-To enable TypeScript support for `.vue` files, replace the `tsc` CLI with `vue-tsc` for type checking. Use [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) in your editor to make the TypeScript language service aware of `.vue` types.
+The library includes TypeScript declarations out of the box. No additional setup is required.
 
 ## Contributing
 
-Contributions are welcome! Please follow the standard GitHub workflow for submitting issues and pull requests.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+MIT License © 2024 [codetab](https://github.com/codetaab)
 
 ## Recommended IDE Setup
 

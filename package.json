@@ -2,18 +2,21 @@
   "name": "crst-icon",
   "version": "0.0.1",
   "description": "crst-icon is a Vue 3 icon component library",
-  "main": "dist/crst-icon.cjs.js",
-  "module": "dist/crst-icon.es.js",
-  "types": "dist/index.d.ts",
   "type": "module",
+  "main": "./dist/crst-icon.umd.js",
+  "module": "./dist/crst-icon.es.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/crst-icon.es.js",
-      "require": "./dist/crst-icon.cjs.js"
+      "require": "./dist/crst-icon.umd.js"
+    },
+    "./icons": {
+      "import": "./dist/icons/index.js"
     }
   },
   "files": [
-    "dist/",
+    "dist",
     "src/components/",
     "src/",
     "index.ts"
@@ -25,13 +28,11 @@
   "peerDependencies": {
     "vue": "^3.0.0"
   },
-  "dependencies": {
-    "vue": "^3.0.0"
-  },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "rollup-plugin-visualizer": "^5.14.0",
-    "vite": "^6.0.11"
+    "vite": "^6.0.11",
+    "vue": "^3.0.0"
   },
   "keywords": [
     "vue",

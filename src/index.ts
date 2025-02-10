@@ -1,4 +1,6 @@
 // src/index.ts
 export * from './registry/iconsRegistry';
+export { CrstIcon } from './components';
 
-export { default as CrstIcon } from './components/icon';
+// Export all default icons
+export * from './icons';

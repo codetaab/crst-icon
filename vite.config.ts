@@ -13,6 +13,11 @@ export default defineConfig({
       brotliSize: true,
     }),
   ],
+  resolve: {
+    alias: {
+      '@icons': path.resolve(__dirname, 'src/icons'), // Add this alias
+    },
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),

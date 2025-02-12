@@ -48,8 +48,5 @@
   "bugs": {
     "url": "https://github.com/codetaab/crst-icon/issues"
   },
-  "homepage": "https://github.com/codetaab/crst-icon#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  }
+  "homepage": "https://github.com/codetaab/crst-icon#readme"
 }

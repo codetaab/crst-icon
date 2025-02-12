@@ -27,9 +27,9 @@ export async function registerIcons(iconFiles: Record<string, () => Promise<any>
         console.warn(`Duplicate icon name detected: ${iconName} from ${source} source`);
       } else {
         icons[iconName] = markRaw(module.default);
-        if (process.env.NODE_ENV !== 'production') {
-          console.log(`Registered icon: ${iconName} from ${source} source`);
-        }
+        // if (process.env.NODE_ENV !== 'production') {
+        //   console.log(`Registered icon: ${iconName} from ${source} source`);
+        // }
       }
     })
   );
@@ -37,9 +37,9 @@ export async function registerIcons(iconFiles: Record<string, () => Promise<any>
   Object.assign(iconsStore.iconsRegistry, icons);
   iconsStore.isReady = true;
 
-  if (process.env.NODE_ENV !== 'production') {
-    console.log('Registry now contains:', Object.keys(iconsStore.iconsRegistry));
-  }
+  // if (process.env.NODE_ENV !== 'production') {
+  //   console.log('Registry now contains:', Object.keys(iconsStore.iconsRegistry));
+  // }
 }
 
 // Initialize default icons

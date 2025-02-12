@@ -6,6 +6,8 @@ A lightweight and flexible icon library for Vue 3 applications.
 
 `crst-icon` is a Vue 3 library that provides an efficient way to manage and use icons in your applications. It includes a set of default icons and allows you to easily add your own custom icons.
 
+For detailed documentation and live examples, visit [codetab.tech](https://codetab.tech)
+
 ## Features
 
 - 🚀 Vue 3 Support
@@ -16,6 +18,14 @@ A lightweight and flexible icon library for Vue 3 applications.
 - 🎯 Tree-shakeable
 - 🎭 Customizable Styling
 - ♿ Accessibility Support
+
+## Documentation
+
+- 📚 [Full Documentation](https://codetab.tech/components)
+  <!-- - 🎮 [Interactive Playground](https://codetab.tech/playground) -->
+  <!-- - 🎨 [Icon Gallery](https://codetab.tech/icons) -->
+  <!-- - 💡 [Examples](https://codetab.tech/examples) -->
+  <!-- - 📖 [API Reference](https://codetab.tech/api) -->
 
 ## Installation
 
@@ -191,3 +201,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+---
+
+Built with ❤️ by [codetab.tech](https://codetab.tech).

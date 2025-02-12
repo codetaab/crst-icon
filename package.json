@@ -1,19 +1,19 @@
 {
-  "name": "crst-icon",
+  "name": "@codetab/crst-icon",
   "version": "0.0.1",
   "description": "crst-icon is a Vue 3 icon component library",
   "type": "module",
   "main": "./dist/crst-icon.umd.js",
   "module": "./dist/crst-icon.es.js",
   "types": "./dist/index.d.ts",
+  "style": "./dist/crst-icon.css",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/crst-icon.es.js",
       "require": "./dist/crst-icon.umd.js"
     },
-    "./icons": {
-      "import": "./dist/icons/index.js"
-    }
+    "./style.css": "./dist/crst-icon.css"
   },
   "files": [
     "dist",
@@ -48,5 +48,8 @@
   "bugs": {
     "url": "https://github.com/codetaab/crst-icon/issues"
   },
-  "homepage": "https://github.com/codetaab/crst-icon#readme"
+  "homepage": "https://github.com/codetaab/crst-icon#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }

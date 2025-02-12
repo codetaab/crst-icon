@@ -1,0 +1,149 @@
+:root {
+  --icon-primary-color: #000;
+  --icon-secondary-color: #6b7280;
+  --icon-success-color: #10b981;
+  --icon-warning-color: #f59e0b;
+  --icon-error-color: #ef4444;
+}
+
+/* Base icon styles */
+.css-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* SVG base styles */
+.css-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Size variants */
+.css-icon--xs {
+  width: 1rem;
+  height: 1rem;
+}
+
+.css-icon--sm {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.css-icon--md {
+  width: 2rem;
+  height: 2rem;
+}
+
+.css-icon--lg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.css-icon--xl {
+  width: 3rem;
+  height: 3rem;
+}
+
+.css-icon--2xl {
+  width: 4rem;
+  height: 4rem;
+}
+
+.css-icon--3xl {
+  width: 5rem;
+  height: 5rem;
+}
+
+.css-icon--4xl {
+  width: 6rem;
+  height: 6rem;
+}
+
+.css-icon--5xl {
+  width: 7rem;
+  height: 7rem;
+}
+
+.css-icon--6xl {
+  width: 8rem;
+  height: 8rem;
+}
+
+.css-icon--7xl {
+  width: 9rem;
+  height: 9rem;
+}
+
+.css-icon--8xl {
+  width: 10rem;
+  height: 10rem;
+}
+
+.css-icon--9xl {
+  width: 11rem;
+  height: 11rem;
+}
+
+.css-icon--10xl {
+  width: 12rem;
+  height: 12rem;
+}
+
+/* Loading state */
+.css-icon.loading {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+/* Color utility classes */
+.css-icon--primary {
+  color: var(--icon-primary-color, currentColor);
+}
+
+.css-icon--secondary {
+  color: var(--icon-secondary-color, #6b7280);
+}
+
+.css-icon--success {
+  color: var(--icon-success-color, #10b981);
+}
+
+.css-icon--warning {
+  color: var(--icon-warning-color, #f59e0b);
+}
+
+.css-icon--error {
+  color: var(--icon-error-color, #ef4444);
+}
+
+.css-icon--info {
+  color: var(--icon-info-color, #3b82f6);
+}
+
+/* Accessibility */
+.css-icon:focus {
+  outline: 2px solid var(--icon-focus-color, #3b82f6);
+  outline-offset: 2px;
+}
+
+.css-icon:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Animation for loading state */
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.css-icon--spin {
+  animation: icon-spin 1s linear infinite;
+}

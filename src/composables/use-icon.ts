@@ -24,6 +24,10 @@ export function useIcon(props: {
     return `${kebabCase(props.name)}-icon`;
   });
 
+  // add a list of standerd sizes: xs, sm, md, lg, xl
+  const standardSizes = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'];
+
+
   // Use watchEffect to update the writable ref when the computed name changes.
   watchEffect(() => {
     const iconComponent = getIcon(computedName.value);
@@ -32,7 +36,9 @@ export function useIcon(props: {
 
   // Memoize computed properties to avoid unnecessary recomputations.
   const computedColor = computed(() => props.color || '');
-  const computedSize = computed(() => (props.size ? `${BASE_ICON_CLASS_PREFIX}${props.size}` : ''));
+  const computedSize = computed(() => {
+    return standardSizes.includes(props.size) ? `${BASE_ICON_CLASS_PREFIX}${props.size}` : props.size;
+  });
   const computedRotate = computed(() => (props.rotate ? `transform: rotate(${props.rotate}deg)` : ''));
   const computedAriaLabel = computed(() => props.ariaLabel ?? props.name);
 

@@ -14,39 +14,61 @@ A lightweight and flexible icon library for Vue 3 applications.
 - 🔧 Easy Configuration
 - 💪 TypeScript Support
 - 🎯 Tree-shakeable
+- 🎭 Customizable Styling
+- ♿ Accessibility Support
 
 ## Installation
 
 ```bash
-npm install crst-icon
+npm install @codetab/crst-icon
 ```
 
 or
 
 ```bash
-yarn add crst-icon
+yarn add @codetab/crst-icon
 ```
 
-## Basic Usage
+## Setup Guide
 
-1. Import and register the component in your main file:
+### 1. Register Your Icons
 
-```javascript
+Create an icons registry file (e.g., `src/icons/index.ts`):
+
+```typescript
+// src/icons/index.ts
+import { registerIcons } from '@codetab/crst-icon'
+
+const icons = import.meta.glob('./*.vue')
+
+registerIcons(icons)
+```
+
+### 2. Set Up Your Main Application
+
+Import and register the component and styles in your main file:
+
+```typescript
+// main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { CrstIcon } from 'crst-icon'
+import './icons' // Import icons registry
+import { CrstIcon } from '@codetab/crst-icon'
+import '@codetab/crst-icon/style.css'
 
 const app = createApp(App)
 app.component('CrstIcon', CrstIcon)
 app.mount('#app')
 ```
 
-2. Use the icon component in your templates:
+### 3. Use in Components
+
+Use the icon component in your templates:
 
 ```vue
 <template>
   <div>
-    <CrstIcon name="home" />
+    <CrstIcon name="home" size="md" />
   </div>
 </template>
 ```
@@ -61,28 +83,78 @@ The library comes with a set of default icons that you can use right away:
 </template>
 ```
 
-## Adding Custom Icons
+## Styling Options
 
-You can register your own custom icons:
+### Size Classes
 
-```javascript
-import { registerIcons } from 'crst-icon'
+The library provides predefined size classes:
 
-// Get all icon files in your icons directory
-const customIcons = import.meta.glob('./icons/*.vue')
+- `xs` - 1rem (16px)
+- `sm` - 1.5rem (24px)
+- `md` - 2rem (32px)
+- `lg` - 2.5rem (40px)
+- `xl` - 3rem (48px)
+- `2xl` - 4rem (64px)
+- `3xl` - 5rem (80px)
+- `4xl` - 6rem (96px)
+- `5xl` - 7rem (112px)
+- `6xl` - 8rem (128px)
+- `7xl` - 9rem (144px)
+- `8xl` - 10rem (160px)
+- `9xl` - 11rem (176px)
+- `10xl` - 12rem (192px)
 
-// Register your custom icons
-registerIcons(customIcons, 'custom')
+```vue
+<CrstIcon name="home" size="md" />
+```
+
+### Color Classes
+
+Built-in color variants:
+
+- `primary`
+- `secondary`
+- `success`
+- `warning`
+- `error`
+- `info`
+
+```vue
+<CrstIcon name="home" color="primary" />
+```
+
+### Custom Colors
+
+You can customize the colors using CSS variables:
+
+```css
+:root {
+  --icon-primary-color: #your-color;
+  --icon-secondary-color: #your-color;
+  --icon-success-color: #your-color;
+  --icon-warning-color: #your-color;
+  --icon-error-color: #your-color;
+  --icon-info-color: #your-color;
+  --icon-focus-color: #your-color;
+}
+```
+
+### Animation
+
+Add spinning animation to your icon:
+
+```vue
+<CrstIcon name="loading" class="css-icon--spin" />
 ```
 
 ## Icon Properties
 
-| Prop   | Type   | Default        | Description       |
-| ------ | ------ | -------------- | ----------------- |
-| name   | String | required       | Name of the icon  |
-| size   | String | '1em'          | Size of the icon  |
-| color  | String | 'currentColor' | Color of the icon |
-| rotate | Number | 0              | Rotation degree   |
+| Prop   | Type   | Default        | Description                    |
+| ------ | ------ | -------------- | ------------------------------ |
+| name   | String | required       | Name of the icon               |
+| size   | String | 'md'           | Size of the icon (xs to 10xl)  |
+| color  | String | 'currentColor' | Color class or CSS color value |
+| rotate | Number | 0              | Rotation degree                |
 
 ## TypeScript Support
 
@@ -95,14 +167,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 MIT License © 2024 [codetab](https://github.com/codetaab)
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
 
 ## Project Setup
 

@@ -31,7 +31,12 @@ export default defineConfig({
         globals: {
           vue: 'Vue',
         },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'style.css') return 'crst-icon.css';
+          return assetInfo.name;
+        },
       },
     },
+    cssCodeSplit: false,
   },
 });
